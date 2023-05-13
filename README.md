@@ -1,5 +1,8 @@
 # Running
-1. Run `ganache` using default settings such that it runs 
-on `http://127.0.0.1:8545`. 
-2. Replace [`privateKey`](https://github.com/Kevin-Mok/ganache-tx/blob/c241177ac77fc8f6cda4b6779bc5096b4a5abc3d/index.js#L11) with one generated from Ganache.
-3. Run `node index.js`.
+```
+ganache --wallet.accounts \
+  0xe8ee08a685d093206043f7274958f3a51944ce0b49393d20fd9fed2d0585077b,50000000000000000000 
+  # ensure that it's running on http://127.0.0.1:8545 
+npm i
+node index.js
+```
