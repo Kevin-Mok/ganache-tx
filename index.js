@@ -10,11 +10,14 @@ export const getWeb3 = () => {
 
 const web3 = getWeb3();
 const privateKey =
-  "0x3e77f08876d1609ef74cd12a511ab2235f3df462450909b7cb41e76ba31d232e";
+  "0xe8ee08a685d093206043f7274958f3a51944ce0b49393d20fd9fed2d0585077b";
 const account = web3.eth.accounts.privateKeyToAccount(privateKey);
 
 const deploy = async () => {
   const txnCount = await web3.eth.getTransactionCount(account.address);
+  console.log(account.address)
+  const balance = await web3.eth.getBalance(account.address);
+  console.log(balance)
   const rawTxOptions = {
     nonce: web3.utils.numberToHex(txnCount),
     from: account.address,
